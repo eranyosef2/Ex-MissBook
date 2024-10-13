@@ -3,7 +3,8 @@ export const utilService = {
     makeLorem,
     getRandomInt,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    getRandomBookPrice
 }
 
 function makeId(length = 25) {
@@ -32,6 +33,12 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandomBookPrice(min, max) {
+    min = Math.ceil(min * 100)
+    max = Math.floor(max * 100)
+    return Math.floor(Math.random() * (max - min) + min) / 100
 }
 
 

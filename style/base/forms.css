@@ -1,0 +1,21 @@
+button {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(104, 179, 255);
+    margin: 0.2em;
+    border: 0;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5rem; 
+    font-size: 1rem;
+    font-family: Lato-bold;  
+}
+
+button:hover {
+    background-color: rgb(39, 116, 193);
+    color: white;
+    transition: .3s;
+}
+input:focus {
+    background-color: rgb(223, 238, 254);
+    transition: background-color 1s;
+}

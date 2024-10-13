@@ -3,12 +3,13 @@
 }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Lato, sans-serif;
 }
 
 body {
   margin: 0;
-  color: var(--gray3);
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.655);
 }
 
 h1,
@@ -32,9 +33,15 @@ a {
 img,
 embed,
 video,
-object {}
+object {
+  border-radius: 1rem;
+}
 
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
 
- /* * {
-  outline: 1px solid gold;
-} */
+.inline-li {
+  display: inline;
+}

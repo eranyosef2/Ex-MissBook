@@ -1,0 +1,28 @@
+.book-review-title {
+  font-family: Lato-bold, sans-serif;
+  margin-right: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.form-review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book-review {
+  width: 100%;
+}
+
+.form-review input,
+.form-review select {
+  height: 35px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  margin-bottom: 20px;
+}

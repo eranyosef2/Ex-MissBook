@@ -1,0 +1,54 @@
+.book-add-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.book-add {
+  font-family: Lato-bold, sans-serif;
+  font-size: 1.8rem;
+  margin: 30px;
+}
+
+.book-add-input-box {
+  width: 100%;
+  text-align: center;
+}
+
+.book-add-input-box input {
+  height: 35px;
+  width: 40%;
+  min-width: 40%;
+  max-width: 40%;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.book-add-input-res {
+  margin: 30px;
+  width: 70%;
+  min-width: 50%;
+  max-width: 70%;
+}
+
+.book-add-input-res ul {
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+li button {
+  margin-left: 20px;
+}

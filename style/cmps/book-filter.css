@@ -1,0 +1,48 @@
+.book-filter {
+  padding: 5px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.book-filter-title h2 {
+  text-align: center;
+  margin: 20px;
+}
+
+.book-filter-inputs {
+  width: 100%;
+}
+
+.book-filter-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-filter-form form {
+  width: 100%;
+  text-align: center;
+}
+
+.book-filter-input-title,
+.book-filter-input-price {
+  height: 35px;
+  width: 25%;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding-left: 10px;
+  margin: 10px;
+}
+
+.book-filter-input-isOnSale {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.book-filter-link-add-book {
+  background-color: #3aa052;
+}

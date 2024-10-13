@@ -1,0 +1,10 @@
+ /* Lato */
+ @font-face {
+    font-family: 'Lato';
+    src: url('../Lato/Lato-Regular.ttf') format('woff2'),
+}
+
+@font-face {
+    font-family: 'Lato-bold';
+    src: url('../Lato/Lato-Bold.ttf') format('woff2'),
+}
