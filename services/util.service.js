@@ -4,7 +4,8 @@ export const utilService = {
     getRandomInt,
     saveToStorage,
     loadFromStorage,
-    getRandomBookPrice
+    getRandomBookPrice,
+    getTruthyValues
 }
 
 function makeId(length = 25) {
@@ -39,6 +40,18 @@ function getRandomBookPrice(min, max) {
     min = Math.ceil(min * 100)
     max = Math.floor(max * 100)
     return Math.floor(Math.random() * (max - min) + min) / 100
+}
+
+export function getTruthyValues(obj) {
+    const newObj = {}
+    for (const key in obj) {
+        const value = obj[key]
+        if (value || value === 0) {
+            newObj[key] = value
+        }
+    }
+    return newObj
+
 }
 
 
