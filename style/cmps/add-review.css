@@ -26,3 +26,18 @@
   border-radius: 0.5rem;
   margin-bottom: 20px;
 }
+
+.rate-by-stars{
+  cursor: pointer;
+}
+
+.form-review-rating-option{
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.form-review-rating-option input{
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,28 @@
+.rate-by-stars {
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+.rate-by-select {
+  margin: 20px 0;
+  height: 35px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  margin-bottom: 20px;
+}
+
+.rate-by-textbox input {
+  margin: 20px 0;
+  height: 35px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  margin-bottom: 20px;
+}

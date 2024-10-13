@@ -197,7 +197,9 @@ export function BookDetails() {
                         <span className="book-details-review span">
                           Rating:
                         </span>
-                        <span>{review.rating || "No rating"}</span>
+                        <span className="book-details-review-rating">
+                        {review.rating ? ([...Array(5)].map((_, index) => ( <span key={index}>{index < review.rating ? "★" : "☆"}</span> ))) : "No rating"}
+                        </span>
                       </div>
                       <div className="book-details-review-span-info">
                         <span className="book-details-review span">

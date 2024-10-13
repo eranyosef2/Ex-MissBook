@@ -1,5 +1,4 @@
 /* Setup */
-@import 'setup/vars.css';
 @import 'setup/typography.css';
 
 /* Base */
@@ -16,6 +15,7 @@
 @import 'cmps/book-filter.css';
 @import 'cmps/add-review.css';
 @import 'cmps/long-txt.css';
+@import 'cmps/rate-by.css';
 
 /* Pages */
 @import 'pages/book-add.css';
