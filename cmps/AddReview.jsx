@@ -1,6 +1,6 @@
 const { useState } = React
 
-export function AddReview({book, onBookReview}) {
+export function AddReview({onBookReview}) {
 const [review, setReviewToAdd] = useState({
     fullname: '',
     rating: '',
