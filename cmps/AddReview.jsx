@@ -1,39 +1,40 @@
 const { useState } = React
 
-export function AddReview({ book, onBookReview }) {
-    const [review, setReview] = useState({
-      fullname: "",
-      rating: "",
-      readAt: "",
-    })
-    function handleChange({ target }) {
-        const field = target.name
-        let value = target.value
-        // value += ','
-        switch (target.type) {
-            case 'number':
-            case 'range':
-                value = +value
-                break;
+export function AddReview({book, onBookReview}) {
+const [review, setReviewToAdd] = useState({
+    fullname: '',
+    rating: '',
+    readAt: ''
+})
 
-            case 'checkbox':
-                value = target.checked
-                break
-        }
+function handleChange({ target }) {
+    const field = target.name
+    let value = target.value
+    switch (target.type) {
+        case 'number':
+        case 'range':
+            value = +value
+            break;
 
-        setReview(prevReview => ({ ...prevReview, [field]: value }))
+        case 'checkbox':
+            value = target.checked
+            break
     }
 
-    function onAddReview(ev) {
+    setReviewToAdd(prevFilter => ({ ...prevFilter, [field]: value }))
+}
+
+function addBookReview(ev){
     ev.preventDefault()
     onBookReview(review)
-  }
+}
+
   return (
     <section className='book-review'>
-      <h2>Reviews</h2>
-      <form onSubmit={onAddReview}>
+      <div className="book-review-title">Reviews</div>
+      <form onSubmit={addBookReview}>
         <div className='form-review'>
-          <label htmlFor='fullname'>Full Name </label>
+          <label htmlFor='fullname'>Full Name</label>
           <input
             type='text'
             name='fullname'
@@ -51,8 +52,6 @@ export function AddReview({ book, onBookReview }) {
             id='rating'
             required
             onChange={handleChange}
-            value={review.rating}
-
           >
             <option value="">Choose Rating</option>
             <option value="⭐">⭐</option>
@@ -63,14 +62,13 @@ export function AddReview({ book, onBookReview }) {
           </select>
         </div>
         <div className='form-review'>
-          <label htmlFor='readAt'>Read at </label>
+          <label htmlFor='reatAt'>Read at </label>
           <input
             onChange={handleChange}
             required
             type='date'
             name='readAt'
             id='readAt'
-            value={review.readAt}
           />
         </div>
         <button type='submit'>Add Review</button>

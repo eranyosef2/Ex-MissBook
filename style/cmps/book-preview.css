@@ -1,0 +1,42 @@
+.book-card-details {
+  padding: 10px;
+  position: relative;
+  text-align: left;
+}
+
+.book-card-details img{
+  width: 100%;
+}
+
+.book-card-details-info {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.book-card-details-on-sale {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  font-family: Lato-bold;
+  color: white;
+  padding: 7px 10px;
+  background: linear-gradient(
+    to right,
+    #063f0b,
+    #0b7712,
+    #0b7712,
+    #0b7712,
+    #0b7712,
+    #0b7712,
+    #0b7712,
+    #0b7712
+  );
+}
+
+.book-card-title {
+  font-size: 1.2rem;
+  font-family: Lato-bold;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}

@@ -1,13 +1,17 @@
 import { bookService } from "../services/book.service.js"
+
 const { useEffect, useState } = React
 const { useParams, useNavigate } = ReactRouterDOM
+
 export function BookEdit() {
   const [bookToEdit, setBookToEdit] = useState( null )
   const { bookId } = useParams()
   const navigate = useNavigate()
+
   useEffect(() => {
     if (bookId) loadBook()
   }, [bookId])
+
   function loadBook() {
     bookService
       .get(bookId)
@@ -16,6 +20,7 @@ export function BookEdit() {
         console.log("Problem getting book:", err)
       })
   }
+
   function handleChange({ target }) {
     let { value, name: field, type } = target
     switch (type) {
@@ -23,12 +28,14 @@ export function BookEdit() {
       case "range":
         value = +value
         break
+
       case "checkbox":
         value = target.checked
         break
     }
     setBookToEdit((prevBook) => ({ ...prevBook, [field]: value }))
   }
+
   function handleListPriceChange({ target }) {
     let { value, name: field, type } = target
     switch (type) {
@@ -36,6 +43,7 @@ export function BookEdit() {
       case "range":
         value = +value
         break
+
       case "checkbox":
         value = target.checked
         break
@@ -45,20 +53,25 @@ export function BookEdit() {
       listPrice: { ...prevBook.listPrice, [field]: value },
     }))
   }
+
   function onSaveBook(ev) {
     ev.preventDefault()
     bookService.save(bookToEdit).then(navigate("/book"))
     showSuccessMsg("Book saved successfully")
   }
+
   function onCancelEdit() {
     navigate("/book")
   }
+
   if (!bookToEdit) return <div>Loading...</div>
   return (
     <section className="book-edit">
       <h2 className="edit-book-header">Edit Book</h2>
       <form onSubmit={onSaveBook}>
-        <div className="book-details-info-row">
+        
+        <div className="book-edit-form">
+        <div className="book-edit-info-row">
           <label className="book-details-info-title">Title:</label>
           <input
             type="text"
@@ -68,7 +81,8 @@ export function BookEdit() {
             onChange={handleChange}
           />
         </div>
-        <div className="book-details-info-row">
+
+        <div className="book-edit-info-row">
           <label className="book-details-info-title">Description:</label>
           <textarea
             type="text"
@@ -78,7 +92,8 @@ export function BookEdit() {
             onChange={handleChange}
           />
         </div>
-        <div className="book-details-info-row">
+
+        <div className="book-edit-info-row">
           <label className="book-details-info-title">Price:</label>
           <input
             type="number"
@@ -88,7 +103,8 @@ export function BookEdit() {
             value={bookToEdit.listPrice ? bookToEdit.listPrice.amount || '' : ''}
           />
         </div>
-        <div className="book-details-info-row">
+
+        <div className="book-edit-info-row">
           <label className="book-details-info-title">On Sale:</label>
           <input
             type="checkbox"
@@ -98,14 +114,16 @@ export function BookEdit() {
             checked={bookToEdit.listPrice ? bookToEdit.listPrice.isOnSale || false : false}
           />
         </div>
+        </div>
+
         <div className="book-edit-actions-container">
-          <button className="save-edit-btn">Save ✅</button>
+          <button className="save-edit-btn">Save ✔</button>
           <button
             type="button"
             className="cancel-edit-btn"
             onClick={onCancelEdit}
           >
-            Cancel ❎
+            Cancel ✖
           </button>
         </div>
       </form>

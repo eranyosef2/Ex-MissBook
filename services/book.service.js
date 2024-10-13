@@ -9,6 +9,7 @@ export const bookService = {
     getDefaultFilter,
     addReview,
     deleteReview,
+    addGoogleBook,
 }
 const BOOK_KEY = 'bookDB'
 _createBooks()
@@ -51,20 +52,28 @@ function getDefaultFilter() {
 }
 
 function addReview(book, review) {
-    const bookCopy = JSON.parse(JSON.stringify(book))  
-    if (!bookCopy.reviews) bookCopy.reviews = []
-    
-    bookCopy.reviews.push(review)
-    
-    return storageService.put(BOOK_KEY, bookCopy)
+    if (!book.reviews) book.reviews = []
+    book.reviews.push(review)
+    return storageService.put(BOOK_KEY, book)
 }
 
 function deleteReview(book, reviewIdx) {
-    book.reviews.splice(reviewIdx, 1);
-  
-    return storageService.put(BOOK_KEY, book);
-  }
-  function _setNextPrevBookId(book) {
+    book.reviews.splice(reviewIdx, 1)
+    return storageService.put(BOOK_KEY, book)
+}
+
+function addGoogleBook(newGoogleBook) {
+    query()
+        .then(books => {
+            const bookInStorage = books.some(book => book.id === newGoogleBook.id)
+            if (!bookInStorage) {
+                books.push(newGoogleBook)
+                utilService.saveToStorage(BOOK_KEY, books)
+            }
+        })
+}
+
+function _setNextPrevBookId(book) {
     return query().then((books) => {
         const bookIdx = books.findIndex((currBook) => currBook.id === book.id)
         const nextBook = books[bookIdx + 1] ? books[bookIdx + 1] : books[0]

@@ -1,0 +1,41 @@
+.book-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px;
+}
+
+.book-edit input {
+  height: 35px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+}
+
+.book-edit-info-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.book-edit-info-row textarea{
+    height: 35px;
+    width: 89%;
+    min-width: 89%;
+    max-width: 89%;
+    font-size: 1rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+}
+
+.book-edit-form{
+    width: 500px;
+}

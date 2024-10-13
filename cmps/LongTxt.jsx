@@ -12,7 +12,7 @@ export function LongTxt({ txt, length = 100 }) {
     const textToShow = (isShowFullTxt || !isLongText) ? txt : (txt.substring(0, length)) + '...'
     return (
         <section className="long-txt">
-            <h4>
+            <span>
                 {textToShow}
                 {isLongText &&
                     <p>
@@ -21,7 +21,7 @@ export function LongTxt({ txt, length = 100 }) {
                         </button>
                     </p>
                 }
-            </h4>
+            </span>
         </section>
     );
 }
