@@ -101,7 +101,7 @@ function _createBooks() {
                 "Computers",
                 "Hack"
             ],
-            "thumbnail": "../BooksImages/20.jpg",
+            "thumbnail": "./BooksImages/20.jpg",
             "language": "en",
             "listPrice": {
                 "amount": 109,
